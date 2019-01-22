@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from selenium.webdriver.firefox.webdriver import WebDriver
+from germanium.static import *
 """
 This file will have a sketch of a Zeug that will be called FirefoxZeug.
 It will do:
@@ -32,8 +34,6 @@ from time import sleep
 """
 I will use Germanium as a overlay on selenium for python
 """
-from germanium.static import *
-from selenium.webdriver.firefox.webdriver import WebDriver
 
 __all__ = []
 
@@ -43,8 +43,8 @@ Here are constants used in program
 URL = "https://www.deepl.com/translator"
 
 # CSS Class of the input and output textarea
-input= "css:.lmt__source_textarea"
-output= "css:.lmt__target_textarea"
+input = "css:.lmt__source_textarea"
+output = "css:.lmt__target_textarea"
 
 # CSS Classes of language selectors and the lists of languages
 input_language_select_class = "css:.lmt__language_select--source .lmt__language_select__opener"
@@ -75,12 +75,14 @@ Bellow is the list of languages usd in deepl.com
     <li dl-value="PL">Polish</li>
 </ul>
 """
-LANGUAGE_LIST=['auto', 'EN', 'DE', 'FR', 'ES', 'IT', 'NL', 'PL']
-LANGUAGE_DICT= dict(zip(LANGUAGE_LIST, LANGUAGE_LIST))
+LANGUAGE_LIST = ['auto', 'EN', 'DE', 'FR', 'ES', 'IT', 'NL', 'PL']
+LANGUAGE_DICT = dict(zip(LANGUAGE_LIST, LANGUAGE_LIST))
 
 """
 This class is getting the random number
 """
+
+
 class HumanRandom:
     START = 10
     BASE = 4
@@ -90,7 +92,7 @@ class HumanRandom:
 
     # This is a function that will be a noise generator
     def noise(self):
-        self.START = int((self.START + self.random_number())/2) + self.BASE
+        self.START = int((self.START + self.random_number()) / 2) + self.BASE
         return self.START
 
 
@@ -113,9 +115,9 @@ go_to(URL)
 Instructions to follow:
 
 left_select:
-    click: 
+    click:
     language: function (lang) { return selector + lang }
-    
+
 right_select:
     click:
     language: function (lang) { return selector + lang }
@@ -140,6 +142,7 @@ for sentence in sentences:
 translation = zip(sentences, saved output)
 save translation to csv
 """
+
 
 def select_language(lang, select):
     click(select['click'])

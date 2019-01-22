@@ -5,6 +5,7 @@ import numpy as np
 # for the same results
 random.seed(10)
 
+
 class HumanRandom:
     START = 10
     BASE = 4
@@ -14,11 +15,11 @@ class HumanRandom:
 
     # This is a function that will make some noise.
     def noise(self):
-        self.START = int((self.START + self.random_number())/2) + self.BASE
+        self.START = int((self.START + self.random_number()) / 2) + self.BASE
         return self.START
 
 
-t = np.asarray(range(0, 300)) #array(range(0, 100))
+t = np.asarray(range(0, 300))  # array(range(0, 100))
 
 s1 = []
 human = HumanRandom()

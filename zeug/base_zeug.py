@@ -2,6 +2,7 @@
 import logging
 from zeug.zeug_tools import Tool
 
+
 class Zeug(object):
     def __init__(self, tools, slots, instructions):
         self.tools = tools
@@ -12,14 +13,13 @@ class Zeug(object):
         self.output = None
         self.on = True
         self.single_run = True
-    
+
     def prepare(self, *args):
         raise NotImplementedError("You have to implement me")
 
     def on_exception(self, exception):
         raise NotImplementedError("You have to implement me")
-    
-    
+
     def do(self):
         while self.on:
             try:
@@ -38,5 +38,5 @@ class Zeug(object):
         self.output = self.environment.get('output', None)
 
     def clean(self):
-        for key, tool in self.tools.items()
-            tool.clean()   
+        for key, tool in self.tools.items():
+            tool.clean()

@@ -28,6 +28,6 @@ six==1.11.0
 soupsieve==1.7.2
 tqdm==4.29.1
 twine==1.12.1
-urllib3==1.24.2
+urllib3==1.26.5
 webencodings==0.5.1
 -e git+https://github.com/przemekkot/zeug.git@ef23fba1982c7a0e24709e40886b90659432b041#egg=zeug
